@@ -38,6 +38,7 @@ Integrei a API [Receita WS](https://developers.receitaws.com.br/#/operations/que
 6. Isso iniciará o servidor, e você verá as mensagens de inicialização no console.
    
 7. "Para verificar o funcionamento do servidor, acesse http://localhost:8080/ em seu navegador. Você verá uma mensagem indicando que o servidor está operacional."
+   
   ![localhost](assets/img/localhost.png)
 > Certifique-se de ter o Go instalado no seu sistema e que as dependências do projeto foram resolvidas com `go mod tidy` antes de tentar executar o código.
 
@@ -89,17 +90,7 @@ Faça uma requisição GET para a rota `/agendas` para listar todas as agendas.
 
 **Exemplo de Resposta:**
 
-```json
-[
-    {
-        "horario": "10:00",
-        "empresa": {
-            "cnpj":"26488705000193",
-            ...
-        },
-    }
-]
-```
+![agendas](assets/img/agendas.png)
 
 #### 3. Verificar Disponibilidade de Horários
 
@@ -110,18 +101,4 @@ Faça uma requisição GET para a rota `/agendas:disponibilidade` para verificar
 
 **Exemplo de Resposta:**
 
-```json
-[
-    {
-        "inicio":"8:00",
-        "fim":"9:00",
-        "disponivel": true
-    },
-    {
-        "inicio":"9:00",
-        "fim":"10:00",
-        "disponivel": false
-    }
-]
-```
-
+![disponibilidade](assets/img/disponibilidade.png)
