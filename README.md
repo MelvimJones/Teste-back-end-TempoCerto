@@ -63,7 +63,7 @@ O arquivo `config.go` contém configurações essenciais para o projeto. Ajuste 
 
 ### Funcionalidades
 
-#### 1. Solicitar Agendamento
+# 1. Solicitar Agendamento
 
 Envie uma requisição POST para a rota `/agendas` com um JSON contendo as informações do agendamento.
 
@@ -81,7 +81,7 @@ Envie uma requisição POST para a rota `/agendas` com um JSON contendo as infor
 }
 ```
 
-#### 2. Listar Agendas
+# 2. Listar Agendas
 
 Faça uma requisição GET para a rota `/agendas` para listar todas as agendas.
 
@@ -92,7 +92,7 @@ Faça uma requisição GET para a rota `/agendas` para listar todas as agendas.
 
 ![agendas](assets/img/agendas.png)
 
-#### 3. Verificar Disponibilidade de Horários
+# 3. Verificar Disponibilidade de Horários
 
 Faça uma requisição GET para a rota `/agendas:disponibilidade` para verificar a disponibilidade de horários.
 
