@@ -1,5 +1,48 @@
 # Teste Back-end TempoCerto
 
+### Tecnologias Utilizadas
+
+O projeto foi desenvolvido utilizando as seguintes tecnologias:
+
+1. **Golang:**
+   - Linguagem de programação principal.
+
+2. **MySQL/MariaDB:**
+   - Sistema de gerenciamento de banco de dados.
+
+### Uso da API Receita WS
+
+Integrei a API [Receita WS](https://developers.receitaws.com.br/#/operations/queryCNPJFree) para consultar o CNPJ e obter a razão social da empresa na rota de listagem das agendas. Essa integração adiciona informações valiosas ao sistema, proporcionando uma experiência mais completa para os usuários.
+
+![API](<assets/img/Uso da API Receita WS.png>)
+
+# Informações sobre Utilização:
+
+1. Clone o repositório.
+   
+   ```bash
+   git@github.com:MelvimJones/Teste-back-end-TempoCerto.git
+   ```
+
+2. Configure as opções em `config.go`.
+3. Execute o script `database.go` para inicializar o banco de dados.
+4. Abra o terminal na pasta do seu projeto.
+
+5. Execute os seguintes comandos:
+
+
+   ```bash
+   go run main.go
+   ```
+
+6. Isso iniciará o servidor, e você verá as mensagens de inicialização no console.
+   
+7. "Para verificar o funcionamento do servidor, acesse http://localhost:8080/ em seu navegador. Você verá uma mensagem indicando que o servidor está operacional."
+  ![localhost](assets/img/localhost.png)
+> Certifique-se de ter o Go instalado no seu sistema e que as dependências do projeto foram resolvidas com `go mod tidy` antes de tentar executar o código.
+
+
+
 ### Estrutura de Arquivos
 
 #### 1. `config.go`
@@ -81,36 +124,4 @@ Faça uma requisição GET para a rota `/agendas:disponibilidade` para verificar
     }
 ]
 ```
-
-### Tecnologias Utilizadas
-
-O projeto foi desenvolvido utilizando as seguintes tecnologias:
-
-1. **Golang:**
-   - Linguagem de programação principal conhecida pela eficiência e desempenho.
-
-2. **MySQL/MariaDB:**
-   - Sistema de gerenciamento de banco de dados confiável.
-
-### Uso da API Receita WS
-
-Integrei a API [Receita WS](https://developers.receitaws.com.br/#/operations/queryCNPJFree) para consultar o CNPJ e obter a razão social da empresa na rota de listagem das agendas. Essa integração adiciona informações valiosas ao sistema, proporcionando uma experiência mais completa para os usuários.
-
-**Instruções Adicionais:**
-
-1. Clone o repositório.
-2. Configure as opções em `config.go`.
-3. Execute o script `database.go` para inicializar o banco de dados.
-4. Abra o terminal na pasta do seu projeto.
-
-5. Execute os seguintes comandos:
-
-
-   ```bash
-   go run main.go
-   ```
-
-6. Isso iniciará o servidor, e você verá as mensagens de inicialização no console.
-
-Certifique-se de ter o Go instalado no seu sistema e que as dependências do projeto foram resolvidas com `go mod tidy` antes de tentar executar o código.
 
