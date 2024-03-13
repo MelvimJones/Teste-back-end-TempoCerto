@@ -14,29 +14,30 @@ func VerificarDisponibilidade(c *gin.Context) {
 	c.JSON(200, disponibilidade)
 }
 
-// GetAvailability é uma função auxiliar para obter a disponibilidade
-func GetAvailability() []map[string]interface{} {
-	availabilities := []map[string]interface{}{}
+// Função auxiliar para obter a disponibilidade
+func ObterDisponibilidade() []map[string]interface{} {
+	horariosDisponiveis := []map[string]interface{}{}
 
-	// Lógica para verificar a disponibilidade de horários
-	currentHour, currentMinute := time.Now().Hour(), time.Now().Minute()
+	// Disponibilidade de horários
+	horaAtual := time.Now().Hour()
+	minutoAtual := time.Now().Minute()
 
-	for hour := 8; hour < 18; hour++ {
-		startTime := fmt.Sprintf("%02d:00", hour)
-		endTime := fmt.Sprintf("%02d:00", hour+1)
+	for hora := 8; hora < 18; hora++ {
+		inicio := fmt.Sprintf("%02d:00", hora)
+		fim := fmt.Sprintf("%02d:00", hora+1)
 
 		// Verificar disponibilidade
-		futureTime := hour > currentHour || (hour == currentHour && currentMinute < 30)
+		horaNoFuturo := hora > horaAtual || (hora == horaAtual && minutoAtual < 30)
 
-		availability := map[string]interface{}{
-			"start":     startTime,
-			"end":       endTime,
-			"available": futureTime,
+		horarioDisponivel := map[string]interface{}{
+			"inicio":     inicio,
+			"fim":        fim,
+			"disponivel": horaNoFuturo,
 		}
-		availabilities = append(availabilities, availability)
+		horariosDisponiveis = append(horariosDisponiveis, horarioDisponivel)
 	}
 
-	return availabilities
+	return horariosDisponiveis
 }
 
 /* ------------------------------------------------------ */
