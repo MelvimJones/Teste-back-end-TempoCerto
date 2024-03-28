@@ -2,7 +2,7 @@ module AgendaService
 
 go 1.21.4
 
-require (
+require (	
 	filippo.io/edwards25519 v1.1.0 // indirect
 	github.com/0xAX/notificator v0.0.0-20220220101646-ee9b8921e557 // indirect
 	github.com/bytedance/sonic v1.11.2 // indirect

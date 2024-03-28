@@ -60,9 +60,6 @@ func main() {
 
 	router := gin.Default()
 
-	// Verificar Disponibilidade
-	router.GET("/agendas:disponibilidade", handlers.VerificarDisponibilidade)
-
 	// Rota teste de servidor 8080
 	router.GET("/", func(c *gin.Context) {
 		c.JSON(200, gin.H{"message": "Servidor iniciado com sucesso!"})
@@ -122,9 +119,8 @@ func main() {
 	})
 
 	// Rota para verificar disponibilidade
-	router.Handle("GET", "/agendas/disponibilidade", func(c *gin.Context) {
-		// Lógica de verificação de disponibilidade aqui
-		c.JSON(200, gin.H{"message": "Verificar disponibilidade"})
+	router.GET("/agendas:disponibilidade", func(c *gin.Context) {
+		handlers.DisponibilidadeHandler(c, db) // Passa a variável db como argumento
 	})
 
 	router.Run(":8080")
